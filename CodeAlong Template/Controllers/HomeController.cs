@@ -55,64 +55,6 @@ namespace CodeAlong_Template.Controllers
         }
 
 
-        [Route("/FeverChecker")]
-        [HttpGet]
-        public ActionResult FeverChecker()
-        {
-            ViewData["Fever"] = "";
-            ViewData["shypothermia"] = "";
-            return View();
-        }
-
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        [Route("/FeverChecker")]
-        public ActionResult FeverChecker(Fever model)
-        {
-            if (model.Unit == "Fahrenheit")
-            {
-                if (model.CheckFever >= 99)
-                {
-                    ViewData["Message"] = "You have fever ";
-                }
-                else
-                {
-                    ViewData["Message"] = "You have not  fever ";
-                    if (model.Ishypothermia && (model.CheckFever <= 95))
-                    {
-                        ViewData["shypothermia"] = "but hypothermia";
-                    }
-                    else
-                    {
-                        ViewData["shypothermia"] = "";
-
-                    }
-                }
-            }
-            else
-            {
-                if (model.CheckFever >= 38)
-                {
-                    ViewData["Message"] = "You have fever ";
-                }
-                else
-                {
-                    ViewData["Message"] = "You have not  fever ";
-                    if (model.Ishypothermia && (model.CheckFever <= 35))
-                    {
-                        ViewData["shypothermia"] = "but hypothermia";
-                    }
-                    else
-                    {
-                        ViewData["shypothermia"] = "";
-                    }
-
-                }
-
-            }
-            return View();
-        }
         //[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         //public IActionResult Error()
         //{

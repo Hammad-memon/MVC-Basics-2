@@ -57,15 +57,16 @@ namespace CodeAlong_Template
 
             app.UseEndpoints(endpoints =>
             {
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-                endpoints.MapControllerRoute(
-                    name: "customRoute",
-                    pattern: "custom",
-                    defaults: new { controller = "Test", action = "CustomTest" }
-                    );
+                //endpoints.MapControllerRoute(
+                //    name: "customRoute",
+                //    pattern: "custom",
+                //    defaults: new { controller = "Doctor", action = "FeverChecker" }
+                //    );
 
             });
 
