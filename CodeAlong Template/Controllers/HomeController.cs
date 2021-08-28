@@ -55,7 +55,7 @@ namespace CodeAlong_Template.Controllers
         }
 
 
-        //[Route("/Home/FeverChecker")]
+        [Route("/FeverChecker")]
         [HttpGet]
         public ActionResult FeverChecker()
         {
@@ -67,7 +67,7 @@ namespace CodeAlong_Template.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        //[Route("/Home/FeverChecker")]
+        [Route("/FeverChecker")]
         public ActionResult FeverChecker(Fever model)
         {
             if (model.Unit == "Fahrenheit")
