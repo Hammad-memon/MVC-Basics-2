@@ -13,9 +13,15 @@ namespace CodeAlong_Template.Controllers
         [HttpGet]
         public ActionResult FeverChecker()
         {
+            
             ViewData["Fever"] = "";
             ViewData["shypothermia"] = "";
             return View();
+        }
+
+        public ActionResult RedirectToFeverChecker()
+        {
+            return RedirectToAction("FeverChecker");
         }
 
 

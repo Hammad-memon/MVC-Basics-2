@@ -60,12 +60,12 @@ namespace CodeAlong_Template
 
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Doctor}/{action=RedirectToFeverChecker}/{id?}");
 
                 //endpoints.MapControllerRoute(
                 //    name: "customRoute",
                 //    pattern: "custom",
-                //    defaults: new { controller = "Doctor", action = "FeverChecker" }
+                //    defaults: new { controller = "Doctor", action = "RedirectToFeverChecker" }
                 //    );
 
             });
